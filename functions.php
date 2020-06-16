@@ -36,7 +36,7 @@ function loadPage($videoId)
 {
     global $mink;
 
-    $mink->getSession()->visit("https://www.youtube.com/edit?video_id=".$videoId);
+    $mink->getSession()->visit("https://www.youtube.com/edit?video_id=".$videoId);//video id kısmına dikkat
     if($mink->getSession()->getStatusCode() !== 200) die("Cannot load page");
     $page = $mink->getSession()->getPage();
     return $page;
